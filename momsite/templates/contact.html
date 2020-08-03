@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Contact | {% endblock %}
+
+{% block content %}
+<div id="contactform" method="post" onsubmit="contact_form_submit()">
+  <form>
+    <label for="name">Name:
+      <span>(Required)</span>
+    </label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="email">Email:
+      <span>(Required)</span>
+    </label><br>
+    <input type="text" id="email" name="email"><br>
+    <label for="message">Message:
+      <span>(Required)</span>
+    </label><br>
+    <input type="text" id="message" name="message"><br>
+    <input type="submit" value="Send" />
+  </form>
+</div>
+{% endblock %}

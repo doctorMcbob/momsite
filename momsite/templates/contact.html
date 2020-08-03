@@ -2,8 +2,8 @@
 {% block title %}Contact | {% endblock %}
 
 {% block content %}
-<div id="contactform" method="post" onsubmit="contact_form_submit()">
-  <form>
+<div id="contact_wrapper">
+  <form id="contactform" action="/email">
     <label for="name">Name:
       <span>(Required)</span>
     </label><br>
@@ -18,5 +18,7 @@
     <input type="text" id="message" name="message"><br>
     <input type="submit" value="Send" />
   </form>
+  <p id="response"></p>
 </div>
+
 {% endblock %}

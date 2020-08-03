@@ -1,13 +1,28 @@
-//this is a script
-function contact_form_submit() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var msg = document.getElementById("message").value;
-    alert("here")
-    xhttp.open("POST", "/email", true);
-    xhttp.setRequestHeader("name", name);
-    xhttp.setRequestHeader("email", email);
-    xhttp.setRequestHeader("message", msg);
-    xhttp.send();
-    return false;
-}
+$(function () {
+    $("#contactform").submit(function (e){
+	e.preventDefault();
+
+	var form = $(this);
+	var url = form.attr("action");
+	var name = $("#name").val();
+	var email = $("#email").val();
+	var message = $("#message").val();
+	
+	$.ajax({
+	    type: "POST",
+	    url: url,
+	    data: {
+		name: name,
+		email: email,
+		message: message,
+	    },
+	    success: function (data) {
+		$("#response").html("Message sent!")
+	    },
+	    failure: function(data) {
+		$("#response").html("Message failed!")
+	    }
+	});
+
+    });
+});

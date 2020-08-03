@@ -15,10 +15,6 @@ templates = Environment(
     autoescape=select_autoescape(['html', 'xml'])
 )
 
-def debug(request):
-    import pdb; pdb.set_trace()
-    return main(request)
-
 def main(request):
     return Response(templates.get_template("index.html").render())
 
@@ -26,7 +22,12 @@ def contact(request):
     return Response(templates.get_template("contact.html").render())
 
 def email(request):
-    print(dir(request))
+    try:
+        name = request.POST["name"]
+        email = request.POST["email"]
+        message = request.POST["message"]
+    except KeyError:
+        return Response("400 Bad Request")
     return Response("200 OK")
 
 
@@ -34,8 +35,6 @@ if __name__ == """__main__""":
     with Configurator() as config:
         config.add_route("main", "/")
         config.add_view(main, route_name="main")
-        config.add_route("debug", "/debug")
-        config.add_view(debug, route_name="debug")
         config.add_route("contact", "/contact")
         config.add_view(contact, route_name="contact")
         config.add_route("email", "/email")

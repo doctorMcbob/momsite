@@ -1,1 +1,39 @@
+/* the header bar */
+header {
+    background-color: #228822;
+    margin-top: -8px;
+    margin-right: -8px;
+    margin-left: -8px;
+    height: 80px;
+}
 
+.menubar {
+    display: inline;
+    padding: 8%;
+}
+
+.menubar a {
+    margin-top: 30%;
+
+}
+
+
+
+/* the about page */
+.page {
+    margin-top: 10%;
+}
+
+#profile {
+    width: 100%;
+}
+
+.left {
+    width: 35%;
+    float: left;
+}
+
+.right {
+    float: right;
+    width: 45%;
+}

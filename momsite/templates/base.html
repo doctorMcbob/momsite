@@ -9,26 +9,31 @@
     {% endblock %}
   </head>
   <body>
-    <header>
-      <div class="menubar">
-	<a href="/"> HOME </a>
-      </div>
-      <div class="menubar">
-	<a href="/about"> ABOUT </a>
-      </div>
-      <div class="menubar">
-	<a href="/services"> SERVICES </a>
-      </div>
-      <div class="menubar">
-	<a href="/contact"> CONTACT </a>
-      </div>
-    </header>
-
-    {% block content %}
-    {% endblock %}
-
-    <footer>
+    <div id="fullcontainer">
+      <header>
+	<div class="menubar">
+	  <a href="/"> HOME </a>
+	</div>
+	<div class="menubar">
+	  <a href="/about"> ABOUT </a>
+	</div>
+	<div class="menubar">
+	<a href="/services"> SERVICES & FEES </a>
+	</div>
+	<div class="menubar">
+	  <a href="/contact"> CONTACT </a>
+	</div>
+      </header>
       
-    </footer>
+      {% block content %}
+      {% endblock %}
+      
+      <footer>
+	<p> Sherry Thomas, MA, LMHCA, CDP, MHP </p>
+	<p> Cell phone: (206) 567-1973 </p>
+	<p> HereNowPsychotherapyCounseling.com </p>
+	<p> Seattle, WA </p>
+      </footer>
+    </div>
   </body>
 </html>

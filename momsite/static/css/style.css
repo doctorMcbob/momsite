@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "libra";
+    src: url("/static/fonts/LibreCaslonDisplay-Regular.ttf");
+}
+body {
+    font-family: libra;
+}
 /* the header bar */
 header {
     background-color: #228822;
@@ -32,6 +39,7 @@ footer p {
 }
 /* the home page */
 #home {
+    font-weight: bold;
     position: relative;
     text-align: center;2
 }
@@ -53,10 +61,8 @@ footer p {
 }
 
 #home p {
-    background-color: #FFFFFF77;
-    color: black;
+    color: whitesmoke;
     font-size: xx-large;
-    fontfamily: "Arial", sans-serif;
 }
 
 /* the about page */
@@ -75,11 +81,15 @@ footer p {
 }
 
 .right {
-    font-family: "Arial", sans-serif;
     margin-left: 10%;
     margin-right: 10%;
     float: right;
     width: 35%;
+    font-size: 20px;
+}
+
+.right h1 {
+    text-align: center;
 }
 
 /* The contact page */

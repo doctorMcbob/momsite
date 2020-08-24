@@ -76,6 +76,7 @@ if __name__ == """__main__""":
 
         config.add_static_view(name="/static", path="momsite:/static/")
         config.add_static_view(name="/static/css", path="momsite:/static/css/")
+        config.add_static_view(name="/static/fonts", path="momsite:/static/fonts/")
         config.add_static_view(name="static/js", path="momsite:/static/js/")
         config.add_static_view(name="static/img", path="momsite:/static/img/")
 

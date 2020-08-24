@@ -2,20 +2,15 @@
 {% block title %}Contact | {% endblock %}
 
 {% block content %}
+<br>
 <div id="contact_wrapper">
   <form id="contactform" action="/email">
-    <label for="name">Name:
-      <span>(Required)</span>
-    </label><br>
+    <label for="name">Name: </label><br>
     <input type="text" id="name" name="name"><br>
-    <label for="email">Email:
-      <span>(Required)</span>
-    </label><br>
+    <label for="email">Email: </label><br>
     <input type="text" id="email" name="email"><br>
-    <label for="message">Message:
-      <span>(Required)</span>
-    </label><br>
-    <input type="text" id="message" name="message"><br>
+    <label for="message">Message: </label><br>
+    <textarea rows=12 cols=10 id="message" name="message"></textarea>
     <input type="submit" value="Send" />
   </form>
   <p id="response"></p>

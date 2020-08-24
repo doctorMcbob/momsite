@@ -81,3 +81,47 @@ footer p {
     float: right;
     width: 35%;
 }
+
+/* The contact page */
+#contact_wrapper {
+    padding: 20px;
+    boarder-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+#contact_wrapper input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#contact_wrapper input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#contact_wrapper #message {
+    resize: none;
+    width: 100%;
+}
+
+/* service page */
+#services li {
+    list-style: none;
+}
+
+#services li img {
+    width: 250px;
+}
+#services li p {
+    display: none;
+}

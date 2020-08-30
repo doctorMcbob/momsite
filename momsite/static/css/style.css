@@ -6,24 +6,36 @@ body {
     font-family: libra;
 }
 /* the header bar */
-header {
-    background-color: #228822;
-    margin-top: -8px;
-    margin-right: -8px;
-    margin-left: -8px;
-    height: 80px;
+#menubar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
 
-.menubar {
-    display: inline;
-    padding-left: 8%;
-    padding-right: 8%;
+#menubar li {
+    float: left;
 }
 
-.menubar a {
+#menubar li a {
+    display: block;
+    color: white;
     text-align: center;
-    vertical-align: middle;
-    line-height: 90px;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#menubar li p {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#menubar li a:hover {
+    background-color: #111;
 }
 
 /* the footer */
@@ -110,7 +122,7 @@ footer p {
 }
 #contact_wrapper input[type=submit] {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #333;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -125,8 +137,18 @@ footer p {
 }
 
 /* service page */
+#servicewrapper p {
+    text-align: center;
+}
 #services li {
+    border-style: solid;
+    width: 250px;
+    float: left;
+    margin: 10px;
     list-style: none;
+}
+#services li h1 {
+    text-align: center;
 }
 
 #services li img {

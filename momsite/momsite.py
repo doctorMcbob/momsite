@@ -33,6 +33,18 @@ def about(request):
 def services(request):
     return Response(templates.get_template("services.html").render())
 
+def EMDR(request):
+    return Response(templates.get_template("emdr.html").render())
+
+def children(request):
+    return Response(templates.get_template("childrenandadolescents.html").render())
+
+def somatic(request):
+    return Response(templates.get_template("somatictherapies.html").render())
+
+def substance(request):
+    return Response(templates.get_template("substanceusedisorders.html").render())
+
 def email(request):
     try:
         name = request.POST["name"]
@@ -67,6 +79,14 @@ if __name__ == """__main__""":
         config.add_view(contact, route_name="contact")
         config.add_route("services", "/services")
         config.add_view(services, route_name="services")
+        config.add_route("emdr", "/EMDR")
+        config.add_view(EMDR, route_name="emdr")
+        config.add_route("children", "/childrenandadolescents")
+        config.add_view(children, route_name="children")
+        config.add_route("somatic", "/somatictherapies")
+        config.add_view(somatic, route_name="somatic")
+        config.add_route("substance", "/substanceusedisorders")
+        config.add_view(substance, route_name="substance")
         config.add_route("about", "/about")
         config.add_view(about, route_name="about")
         config.add_route("email", "/email")

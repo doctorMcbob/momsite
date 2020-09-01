@@ -12,8 +12,8 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 
 import os
 
-SENDEMAIL = "wootenwesley@gmail.com"
-LOGINEMAIL = "pymessager666@gmail.com"
+SENDEMAIL = "sherry@herenowpsychotherapycounseling.com"
+LOGINEMAIL = "sherry@herenowpsychotherapycounseling.com"
 PASSWORD = os.environ["EMAILPASS"]
 
 templates = Environment(
@@ -44,6 +44,15 @@ def somatic(request):
 
 def substance(request):
     return Response(templates.get_template("substanceusedisorders.html").render())
+
+def internalfamily(request):
+    return Response(templates.get_template("internalfamily.html").render())
+
+def cognitive(request):
+    return Response(templates.get_template("cognitivebehavioral.html").render())
+
+def acceptance(request):
+    return Response(templates.get_template("acceptance.html").render())
 
 def email(request):
     try:
@@ -87,6 +96,13 @@ if __name__ == """__main__""":
         config.add_view(somatic, route_name="somatic")
         config.add_route("substance", "/substanceusedisorders")
         config.add_view(substance, route_name="substance")
+        config.add_route("internalfamily", "/internalfamilysystems")
+        config.add_view(internalfamily, route_name="internalfamily")
+        config.add_route("cognitive", "/cognitivebehavioraltherapy")
+        config.add_view(cognitive, route_name="cognitive")
+        config.add_route("acceptance",
+                         "/acceptanceandcommitmenttherapy")
+        config.add_view(acceptance, route_name="acceptance")
         config.add_route("about", "/about")
         config.add_view(about, route_name="about")
         config.add_route("email", "/email")

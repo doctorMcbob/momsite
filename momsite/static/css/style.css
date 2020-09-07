@@ -106,11 +106,13 @@ footer p {
 }
 
 .right {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 8%;
+    margin-right: 8%;
+    padding: 2%;
     float: right;
     width: 35%;
     font-size: 20px;
+    background-color: #DDDDDD;
 }
 
 .right h1 {
@@ -151,6 +153,15 @@ footer p {
 
 /* service page */
 
+#servicesandfees {
+    position:center;
+    width: 60%;
+    background-color: #DDDDDD;
+    padding: 2%;
+    margin: auto;
+    margin-top: 2%;
+}
+
 #servicewrapper h1 {
     text-align: center;
 }
@@ -165,6 +176,7 @@ footer p {
     float: left;
     margin: 10px;
     list-style: none;
+    background-color: #DDDDDD;
 }
 #services li h1 {
     text-align: center;

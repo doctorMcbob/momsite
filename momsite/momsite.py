@@ -54,6 +54,12 @@ def cognitive(request):
 def acceptance(request):
     return Response(templates.get_template("acceptance.html").render())
 
+def gender(request):
+    return Response(templates.get_template("sexualityandgender.html").render())
+
+def psychodynamic(request):
+    return Response(templates.get_template("psychodynamictherapy.html").render())
+
 def email(request):
     try:
         name = request.POST["name"]
@@ -103,6 +109,12 @@ if __name__ == """__main__""":
         config.add_route("acceptance",
                          "/acceptanceandcommitmenttherapy")
         config.add_view(acceptance, route_name="acceptance")
+        config.add_route("gender", "/sexualityandgender")
+        config.add_view(gender, route_name="gender")
+        config.add_route("psychodynamic", "/psychodynamictherapy")
+        config.add_view(psychodynamic, route_name="psychodynamic")
+
+
         config.add_route("about", "/about")
         config.add_view(about, route_name="about")
         config.add_route("email", "/email")

@@ -120,6 +120,18 @@ footer p {
 }
 
 /* The contact page */
+#contacttext {
+    text-align: center;
+    font-size: 20px;
+    position:center;
+    width: 60%;
+    background-color: #DDDDDD;
+    padding: 2%;
+    margin: auto;
+    margin-top: 2%;
+
+}
+
 #contact_wrapper {
     padding: 20px;
     boarder-radius: 5px;

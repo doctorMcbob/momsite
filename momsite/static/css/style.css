@@ -216,9 +216,26 @@ footer p {
   uses right left logic from about page */
 
 #servicequote {
+    float: right;
     text-align: center;
+    margin-top: 3%;
+    margin-left: 8%;
+    margin-right: 8%;
     padding: 2%;
-    font-size: 20px;
-    background-color: #DDDDDD;
+    float: right;
+    width: 35%;
+
+    font-size: 25px;
+    font-weight: bold;
+}
+#leftservicequote {
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 8%;
+    margin-right: 8%;
+    padding: 2%;
+
+    font-size: 25px;
+    font-weight: bold;
 }
 

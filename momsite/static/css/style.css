@@ -86,26 +86,24 @@ footer p {
 }
 
 /* the about page */
-.page {
-    margin-top: 10%;
-}
 
 #profile {
     width: 100%;
 }
 
 .left {
+    margin-top: 10%;
     margin-left: 10%;
     width: 35%;
     float: left;
 }
 
 .serviceimg {
-    margin-top: 10%;
     width: 100%;
 }
 
 .right {
+    margin-top: 10%;
     margin-left: 8%;
     margin-right: 8%;
     padding: 2%;
@@ -116,6 +114,19 @@ footer p {
 }
 
 .right h1 {
+    text-align: center;
+}
+
+#training {
+    margin-top: 20%;
+}
+
+#history {
+    padding: 2%;
+    font-size: 20px;
+    background-color: #DDDDDD;
+}
+#history h1 {
     text-align: center;
 }
 
@@ -200,3 +211,14 @@ footer p {
 #services li p {
     display: none;
 }
+
+/* each service page 
+  uses right left logic from about page */
+
+#servicequote {
+    text-align: center;
+    padding: 2%;
+    font-size: 20px;
+    background-color: #DDDDDD;
+}
+

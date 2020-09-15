@@ -180,6 +180,11 @@ footer p {
     list-style: none;
     background-color: #DDDDDD;
 }
+
+.servimg {
+    height: 200px;
+}
+
 #services li h1 {
     text-align: center;
 }

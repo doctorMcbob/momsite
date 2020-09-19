@@ -233,12 +233,10 @@ footer p {
 #servicequote {
     float: right;
     text-align: center;
-    margin-top: 3%;
     margin-left: 8%;
     margin-right: 8%;
-    padding: 2%;
     float: right;
-    width: 35%;
+    width: 40%;
 
     font-size: 25px;
     font-weight: bold;
@@ -254,18 +252,20 @@ footer p {
     width: 80%;
     background-color: #DDDDDD;
     font-size: 20px;
+    padding: 1%;
 }
 
 .belowless {
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 20%;
+    margin-top: 25%;
     margin-bottom: 5%;
     position: absolute;
     display: block;
     width: 80%;
     background-color: #DDDDDD;
     font-size: 20px;
+    padding: 1%;
 }
 
 .below h1 {

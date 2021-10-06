@@ -24,6 +24,13 @@ body {
     overflow: hidden;
     background-color: #333;
 }
+
+#menubar p {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 #menubar #logoli {
     width: 18%;
     margin-right: 22px;

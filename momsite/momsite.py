@@ -12,10 +12,6 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 
 import os
 
-SENDEMAIL = "sherry@herenowpsychotherapycounseling.com"
-LOGINEMAIL = "sherry@herenowpsychotherapycounseling.com"
-PASSWORD = os.environ["EMAILPASS"]
-
 templates = Environment(
     loader=PackageLoader("momsite", "templates"),
     autoescape=select_autoescape(['html', 'xml'])
@@ -67,29 +63,7 @@ def safeandsound(request):
     return Response(templates.get_template("safeandsound.html").render())
 
 def email(request):
-    try:
-        name = request.POST["name"]
-        email = request.POST["email"]
-        message = request.POST["message"]
-    except KeyError:
-        return Response("400 Bad Request")
-
-    mail = EmailMessage()
-    mail["To"] = SENDEMAIL
-    mail["From"] = email
-    mail["Subject"] = "Contact from " + str(name)
-    message = "Respond to: " + str(email) + "\n" + message
-    mail.set_content(message)
-
-    s = smtplib.SMTP('smtp.gmail.com', 587)
-    s.ehlo()
-    s.starttls()
-
-    s.login(LOGINEMAIL, PASSWORD)
-    
-    s.send_message(mail)
-    s.quit()
-    return Response("200 OK")
+    return Response("400 Deprecated")
 
 
 if __name__ == """__main__""":

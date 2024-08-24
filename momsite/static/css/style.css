@@ -59,20 +59,51 @@ body {
 }
 
 footer {
-    width : 100%;
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
     margin: 0;
-    padding: 0;
     overflow: hidden;
-    background-color: #333;    
+    background-color: #333;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footerleft {
+    margin-left: 20%;
+}
+.footerright {
+    margin-right: 20%;
+}
+
+.footerleft, .footerright {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between links */
+}
+
+.footerleft a img, .footerright a img, .footerright div a img {
+    height: 50px; /* Set desired size */
+    width: auto; /* Maintain aspect ratio */
 }
 
 footer p {
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
     display: block;
     color: white;
-    text-align: center;
     text-decoration: none;
     font-size: large;
 }
+
 /* the home page */
 #home {
     font-weight: bold;

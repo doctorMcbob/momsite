@@ -1,6 +1,39 @@
 {% extends "base.html" %}
 {% block title %}Contact | {% endblock %}
+{% block head %}
+<script src="https://www.google.com/recaptcha/api.js?render=6LdJMg4pAAAAAIK9sw94AMXp89Hs43nfT_IT6T4L"></script>
+<!-- <script> -->
+<!--   function onCaptchaSubmit(token) { -->
+<!--       console.log("This code block ran"); -->
+<!--       $("#contactform").submit(function (e){ -->
+<!-- 	e.preventDefault(); -->
 
+<!-- 	var form = $(this); -->
+<!-- 	var url = form.attr("action"); -->
+<!-- 	var name = $("#name").val(); -->
+<!-- 	var email = $("#email").val(); -->
+<!-- 	var message = $("#message").val(); -->
+
+<!-- 	$.ajax({ -->
+<!-- 	    type: "POST", -->
+<!-- 	    url: url, -->
+<!-- 	    data: { -->
+<!-- 		name: name, -->
+<!-- 		email: email, -->
+<!-- 		message: message, -->
+<!-- 	    }, -->
+<!-- 	    success: function (data) { -->
+<!-- 		$("#response").html("Message sent!") -->
+<!-- 	    }, -->
+<!-- 	    failure: function(data) { -->
+<!-- 		$("#response").html("Message failed!") -->
+<!-- 	    } -->
+<!-- 	}); -->
+
+<!--     }); -->
+<!--   } -->
+<!-- </script> -->
+{% endblock %}
 {% block content %}
 <div class="contacttext">
   <p>
@@ -20,7 +53,20 @@
 </div>
 <br>
 <div class="contacttext">
-  <p>For any questions, to request a consultation or appointment, call or text (206) 567-1973, or email me at <a href="mailto:sherry@herenowpc.com">sherry@herenowpc.com</a></p>
+  <p>For any questions, to request a consultation or appointment, call or text (206) 567-1973, email me at <a href="mailto:sherry@herenowpc.com">sherry@herenowpc.com</a> or use the form below.</p>
+</div>
+<br>
+<div id="contact_wrapper">
+  <form id="contactform" action="/email">
+    <label for="name">Name: </label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="email">Email: </label><br>
+    <input type="text" id="email" name="email"><br>
+    <label for="message">Message: </label><br>
+    <textarea rows=12 cols=10 id="message" name="message"></textarea>
+    <input type="submit" value="Send" />
+  </form>
+  <p id="response"></p>
 </div>
 
 {% endblock %}

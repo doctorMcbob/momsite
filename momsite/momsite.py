@@ -2,6 +2,7 @@
 This ones for you mom
 """
 import waitress
+import requests
 from pyramid.config import Configurator
 from pyramid.response import Response
 
@@ -11,11 +12,40 @@ from email.message import EmailMessage
 from jinja2 import Environment, PackageLoader, select_autoescape
 
 import os
+import sys
+from pprint import pprint
+sys.stdout = sys.stderr
+
+SENDEMAIL = "sherry@herenowpsychotherapycounseling.com"
+LOGINEMAIL = "sherry@herenowpsychotherapycounseling.com"
+PASSWORD = os.environ.get("EMAILPASS", "TEST_PASS")
+
+CAPTCHA_PROJ_ID = os.environ.get("RECAPTCHA_PROJECT_ID")
+CAPTCHA_SECRET_KEY = os.environ.get("RECAPTCHA_SECRET_KEY")
 
 templates = Environment(
     loader=PackageLoader("momsite", "templates"),
     autoescape=select_autoescape(['html', 'xml'])
 )
+
+def verify_recaptcha(token):
+    print("VALIDATING TOKEN", token)
+    verification_url = 'https://www.google.com/recaptcha/api/siteverify'
+    payload = {
+        'secret': CAPTCHA_SECRET_KEY,
+        'response': token
+    }
+
+    response = requests.post(verification_url, data=payload)
+    result = response.json()
+
+    pprint(result)
+
+    if result['success']:
+        return True
+    else:
+        return False
+
 
 def main(request):
     return Response(templates.get_template("index.html").render())
@@ -62,8 +92,37 @@ def deepbrain(request):
 def safeandsound(request):
     return Response(templates.get_template("safeandsound.html").render())
 
+# def email(request):
+#     return Response("400 Deprecated")
+
 def email(request):
-    return Response("400 Deprecated")
+    try:
+        name = request.POST["name"]
+        email = request.POST["email"]
+        message = request.POST["message"]
+        token = request.POST["token"]
+    except KeyError:
+        return Response("400 Bad Request", status=400)
+
+    if not verify_recaptcha(token):
+        return Response("400 Bad Captcha", status=400)
+
+    mail = EmailMessage()
+    mail["To"] = SENDEMAIL
+    mail["From"] = email
+    mail["Subject"] = "Contact from " + str(name)
+    message = "Respond to: " + str(email) + "\n" + message
+    mail.set_content(message)
+
+    s = smtplib.SMTP('smtp.gmail.com', 587)
+    s.ehlo()
+    s.starttls()
+
+    s.login(LOGINEMAIL, PASSWORD)
+    
+    s.send_message(mail)
+    s.quit()
+    return Response("200 OK")
 
 
 if __name__ == """__main__""":

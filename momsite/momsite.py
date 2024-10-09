@@ -14,6 +14,10 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 import os
 import sys
 from pprint import pprint
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+
 sys.stdout = sys.stderr
 
 SENDEMAIL = "sherry@herenowpsychotherapycounseling.com"
@@ -35,6 +39,7 @@ def verify_recaptcha(token):
         'secret': CAPTCHA_SECRET_KEY,
         'response': token
     }
+    pprint(payload)
 
     response = requests.post(verification_url, data=payload)
     result = response.json()

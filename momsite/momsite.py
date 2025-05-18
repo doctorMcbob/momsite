@@ -97,6 +97,9 @@ def deepbrain(request):
 def safeandsound(request):
     return Response(templates.get_template("safeandsound.html").render())
 
+def fees(request):
+    return Response(templates.get_template("fees.html").render())
+
 # def email(request):
 #     return Response("400 Deprecated")
 
@@ -167,7 +170,8 @@ if __name__ == """__main__""":
         config.add_route("email", "/email")
         config.add_view(email, route_name="email")
 
-        
+        config.add_route("fees", "/fees")
+        config.add_view(fees, route_name="fees")
 
         config.add_static_view(name="/static", path="momsite:/static/")
         config.add_static_view(name="/static/css", path="momsite:/static/css/")

@@ -224,6 +224,34 @@ footer p {
     margin-top: 2%;
 }
 
+#feewrapper {
+    position: center;
+    width: 60%;
+    background-color: #DDDDDD;
+    padding: 2%;
+    margin: auto;
+    margin-top: 2%;
+}
+
+#feewrapper p {
+    font-size: 20px;
+}
+
+#feewrapper li {
+    font-size: 20px;
+}
+
+#feewrapper h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.feesimg {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
 #servicesandfees li {
     font-size: 20px;
 }

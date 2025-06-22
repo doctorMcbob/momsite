@@ -162,8 +162,8 @@ if __name__ == """__main__""":
         config.add_view(psychodynamic, route_name="psychodynamic")
         config.add_route("deepbrain", "/deepbrainreorienting")
         config.add_view(deepbrain, route_name="deepbrain")
-        config.add_route("safeandsound", "/safeandsound")
-        config.add_view(safeandsound, route_name="safeandsound")
+#        config.add_route("safeandsound", "/safeandsound")
+#        config.add_view(safeandsound, route_name="safeandsound")
 
         config.add_route("about", "/about")
         config.add_view(about, route_name="about")
